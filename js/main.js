@@ -4,7 +4,10 @@ const getRandomPositiveInteger = (a, b) => {
     const result = Math.random() * (upper - lower + 1) + lower;
     return Math.floor(result);
   };
+console.log(getRandomPositiveInteger);
 
   const checkStringLength = (string, length) => {
     return string.length <= length;
     };
+
+    console.log(checkStringLength);
