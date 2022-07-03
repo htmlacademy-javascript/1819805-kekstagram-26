@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Анастасия Брусничкина](https://up.htmlacademy.ru/javascript/26/user/1819805).
-* Наставник: [Павел Ившин](https://htmlacademy.ru/profile/id818775).
+* Наставник: [Роман Марченко](https://htmlacademy.ru/profile/id505487).
 
 ---
 
