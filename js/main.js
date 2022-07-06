@@ -1,5 +1,3 @@
-import { get } from 'browser-sync';
-
 const COUNT = 25;
 const DESCRIPTION = [
   'Счастлив и рад',
@@ -24,7 +22,6 @@ const NAME = [
   'Женя',
   'Вика',
 ];
-let amount = 0;
 
 const getRandomPositiveInteger = (a, b) => {
   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
@@ -35,25 +32,28 @@ const getRandomPositiveInteger = (a, b) => {
 
 const createComments = () => {
   return {
-    id: getRandomPositiveInteger(50, 200),
-    avatar: 'img/avatar' + [getRandomPositiveInteger(1, 6)] + '.svg',
+    id: getRandomPositiveInteger(1, 25),
+    avatar: `img/avatar-${getRandomPositiveInteger (1, 6)}.svg`,
     message: MESSAGE[getRandomPositiveInteger(0, 3)],
     name: NAME[getRandomPositiveInteger(0, 8)],
   };
 };
 
+const createCommentList = () => {
+  const numberOfComments = getRandomPositiveInteger(1,5);
+  return Array.from({length: numberOfComments}, createComments);
+};
+
 const createPhotos = () => {
   return {
-    id: amount++,
-    url: 'photos/' + amount + '.jpg ',
-    likes: getRandomPositiveInteger(1, MESSAGE.length),
-    description:
-      DESCRIPTION[getRandomPositiveInteger(1, DESCRIPTION.length - 1)],
-    comments: createComments(),
+    id: getRandomPositiveInteger(1,25),
+    url: `photos/${ getRandomPositiveInteger(1,25) }.jpg`,
+    likes: getRandomPositiveInteger(15,200),
+    description:DESCRIPTION[getRandomPositiveInteger(1, DESCRIPTION.length - 1)],
+    comments: createCommentList()
   };
 };
 
-createComments();
-const createSimilarComments = Array.from({COUNT}, createComments);
+createPhotos();
+const createSimilarComments = Array.from({length: COUNT}, createPhotos);
 
-export{createSimilarComments, createPhotos, createComments};
