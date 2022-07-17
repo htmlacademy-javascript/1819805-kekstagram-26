@@ -52,4 +52,4 @@ const createPhotos = () => {
 
 const createSimilarComments = Array.from({length: COUNT}, createPhotos);
 
-export {createPhotos, createSimilarComments, createCommentList};
+export {createPhotos, createSimilarComments, createCommentList, createComments};
