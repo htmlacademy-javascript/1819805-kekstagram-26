@@ -1,5 +1,5 @@
 import {isEscapeKey} from './utils.js';
-import { createPhotos, createCommentList, createComments } from './data.js';
+import { createCommentList} from './data.js';
 
 const pictures = document.querySelectorAll('.picture');
 const bigPicture = document.querySelector('.big-picture');
