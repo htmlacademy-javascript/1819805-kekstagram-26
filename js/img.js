@@ -6,6 +6,7 @@ const template = document
   .content.querySelector('.picture');
 const fragmentOfPhotos = document.createDocumentFragment();
 
+
 createSimilarComments.forEach(({url, likes, comments}) => {
   const pictureElement = template.cloneNode(true);
   pictureElement.querySelector('.picture__img').src = url;
