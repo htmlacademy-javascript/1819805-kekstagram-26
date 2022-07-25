@@ -26,13 +26,13 @@ const NAME = [
 ];
 
 const createComments = () => {
-  const comments = [];
-  return {
+  const comments = {
     id: getRandomPositiveInteger(1, 25),
     avatar: `img/avatar-${getRandomPositiveInteger (1, 6)}.svg`,
     message: MESSAGE[getRandomPositiveInteger(0, 3)],
     name: NAME[getRandomPositiveInteger(0, 8)],
   };
+  return comments;
 };
 
 const createCommentList = () => {
@@ -47,7 +47,7 @@ const createPhotos = () => {
       url: `photos/${ getRandomPositiveInteger(1,25) }.jpg`,
       likes: getRandomPositiveInteger(15,200),
       description:DESCRIPTION[getRandomPositiveInteger(1, DESCRIPTION.length - 1)],
-      comments: createCommentList()
+      comments: createCommentList(),
     };
   }
 };
